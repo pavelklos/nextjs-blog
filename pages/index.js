@@ -8,7 +8,6 @@ import FeaturedPosts from "../components/home-page/featured-posts";
 function HomePage() {
   return (
     <Fragment>
-      <h1>Home Page</h1>
       <Hero />
       <FeaturedPosts />
     </Fragment>
