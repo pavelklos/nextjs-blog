@@ -24,3 +24,8 @@
     padding: var(--size-8);
   }
 }
+
+/* ADDED */
+.md {
+  border: 8px solid rgba(255, 0, 0, 0.25);
+}
