@@ -1,8 +1,21 @@
 // rfce
 import AllPosts from "../../components/posts/all-posts";
+import { getAllPosts } from "../../lib/posts-util";
 
-function AllPostsPage() {
-  return <AllPosts posts={DUMMY_POSTS} />;
+function AllPostsPage(props) {
+  // return <AllPosts posts={DUMMY_POSTS} />;
+  return <AllPosts posts={props.posts} />;
+}
+
+export function getStaticProps() {
+  const allPosts = getAllPosts();
+
+  return {
+    props: {
+      posts: allPosts,
+    },
+    // revalidate: 1800, // 1800 sec = 30 min
+  };
 }
 
 export default AllPostsPage;
