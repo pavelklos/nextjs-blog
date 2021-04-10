@@ -1,6 +1,9 @@
 // rfce
 import ReactMarkdown from "react-markdown";
 import Image from "next/image";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+// import { atomDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import { darcula } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import PostHeader from "./post-header";
 import classes from "./post-content.module.css";
 
@@ -39,6 +42,17 @@ function PostContent(props) {
       }
 
       return <p>{paragraph.children}</p>;
+    },
+    code(code) {
+      const { language, value } = code;
+      return (
+        <SyntaxHighlighter
+          // style={atomDark}
+          style={darcula}
+          language={language}
+          children={value}
+        />
+      );
     },
   };
 
