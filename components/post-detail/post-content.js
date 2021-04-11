@@ -36,6 +36,7 @@ function PostContent(props) {
               alt={image.alt}
               width={600}
               height={300}
+              objectFit='cover'
             />
           </div>
         );
