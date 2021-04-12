@@ -31,7 +31,7 @@ async function handler(req, res) {
       const username = process.env.MONGODB_USERNAME;
       const password = process.env.MONGODB_PASSWORD;
       const dbName = "posts";
-      const url = `mongodb+srv://${username}:${password}@cluster0.gmwjq.mongodb.net/${dbName}?retryWrites=true&w=majority`;
+      const url = `mongodb+srv://${username}a:${password}@cluster0.gmwjq.mongodb.net/${dbName}?retryWrites=true&w=majority`;
       // client = await MongoClient.connect(url);
       client = await MongoClient.connect(url, {
         useNewUrlParser: true,
