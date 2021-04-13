@@ -1,11 +1,20 @@
 // rfce
 import ReactMarkdown from "react-markdown";
 import Image from "next/image";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+// import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
 // import { atomDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
-import { darcula } from "react-syntax-highlighter/dist/cjs/styles/prism";
+// import { darcula } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import atomDark from "react-syntax-highlighter/dist/cjs/styles/prism/atom-dark";
+// import darcula from "react-syntax-highlighter/dist/cjs/styles/prism/darcula";
+// import jsx from "react-syntax-highlighter/dist/cjs/languages/prism/jsx";
+import js from "react-syntax-highlighter/dist/cjs/languages/prism/javascript";
+import css from "react-syntax-highlighter/dist/cjs/languages/prism/css";
 import PostHeader from "./post-header";
 import classes from "./post-content.module.css";
+
+SyntaxHighlighter.registerLanguage("js", js);
+SyntaxHighlighter.registerLanguage("css", css);
 
 function PostContent(props) {
   const { post } = props;
@@ -48,8 +57,8 @@ function PostContent(props) {
       const { language, value } = code;
       return (
         <SyntaxHighlighter
-          // style={atomDark}
-          style={darcula}
+          style={atomDark}
+          // style={darcula}
           language={language}
           children={value}
         />
@@ -76,12 +85,12 @@ function PostContent(props) {
 
 export default PostContent;
 
-const DUMMY_POST = {
-  slug: "getting-started-with-nextjs",
-  title: "Getting Started with NextJS",
-  image: "getting-started-nextjs.png",
-  excerpt:
-    "NextJS is a the React framework for production - it makes building fullstack React apps and sites a breeze and ships with built-in SSR.",
-  date: "2022-02-10",
-  content: "# This is a first post",
-};
+// const DUMMY_POST = {
+//   slug: "getting-started-with-nextjs",
+//   title: "Getting Started with NextJS",
+//   image: "getting-started-nextjs.png",
+//   excerpt:
+//     "NextJS is a the React framework for production - it makes building fullstack React apps and sites a breeze and ships with built-in SSR.",
+//   date: "2022-02-10",
+//   content: "# This is a first post",
+// };

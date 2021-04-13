@@ -32,3 +32,6 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# next.js - custom advanced behavior
+next.config.js

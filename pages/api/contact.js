@@ -26,14 +26,20 @@ async function handler(req, res) {
 
     // console.log(newMessage);
 
+    const connectionString = `mongodb+srv://${process.env.mongodb_username}:${process.env.mongodb_password}@${process.env.mongodb_clustername}.gmwjq.mongodb.net/${process.env.mongodb_database}?retryWrites=true&w=majority`;
+
     let client;
     try {
-      const username = process.env.MONGODB_USERNAME;
-      const password = process.env.MONGODB_PASSWORD;
-      const dbName = "posts";
-      const url = `mongodb+srv://${username}:${password}@cluster0.gmwjq.mongodb.net/${dbName}?retryWrites=true&w=majority`;
+      // const username = process.env.MONGODB_USERNAME;
+      // const password = process.env.MONGODB_PASSWORD;
+      // const dbName = "posts";
+      // const url = `mongodb+srv://${username}:${password}@cluster0.gmwjq.mongodb.net/${dbName}?retryWrites=true&w=majority`;
       // client = await MongoClient.connect(url);
-      client = await MongoClient.connect(url, {
+      // client = await MongoClient.connect(url, {
+      //   // useNewUrlParser: true,
+      //   useUnifiedTopology: true,
+      // });
+      client = await MongoClient.connect(connectionString, {
         // useNewUrlParser: true,
         useUnifiedTopology: true,
       });
