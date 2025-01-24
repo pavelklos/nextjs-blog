@@ -14,10 +14,10 @@
   "dependencies": {
     "gray-matter": "^4.0.2",
     "mongodb": "^5.0.0", 
-    "next": "12.0.0",  // Next.js 12.x+ supports Node 18+
-    "react": "18.0.0",  // React 18 is compatible with Node 18+
-    "react-dom": "18.0.0",  // React DOM for React 18
-    "react-markdown": "^7.0.0",  // Ensure React Markdown is up to date
-    "react-syntax-highlighter": "^15.4.3"  // Assuming this version works fine
+    "next": "12.0.0",
+    "react": "18.0.0",
+    "react-dom": "18.0.0",
+    "react-markdown": "^7.0.0",
+    "react-syntax-highlighter": "^15.4.3"
   }
 }
